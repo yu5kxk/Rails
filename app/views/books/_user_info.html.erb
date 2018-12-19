@@ -1,0 +1,40 @@
+<div class="container">
+	<div class="row">
+      <div class="col-xs-4">
+        <h1>User info</h1>
+
+        <%= attachment_image_tag user, :user_image, size: '100x100', format: 'jpeg', fallback: "no_image.jpg", class: "user-img" %>
+
+        <ul class="user-info">
+        	<li>
+        		<!-- mane -->
+            <label>name</label>
+        		<%= link_to user.name, user_path(current_user.id), class: "name" %>
+        	</li>
+        	<li>
+        		<!-- introduction -->
+            <label>introduction</label>
+        		<%= current_user.introduction %>
+        	</li>
+          <li>
+            <%= link_to edit_user_path(current_user.id), class: "btn btn-default btn-block edit_user_#{user.id}" do %>
+              <i class="fas fa-tools"></i>
+              <% end %>
+          </li>
+        </ul>
+
+
+        <h1>New book</h1>
+        <!-- form_for部分 -->
+        <%= form_for(book) do |f| %>
+
+            <h4>Title</h4>
+            <%= f.text_field :title, class: "book-title"%>
+
+            <h4>Opinion</h4>
+            <%= f.text_area :body,class: "book-body" %>
+            <br>
+            <%= f.submit 'Create Book', class: "btn btn-primary" %>
+
+        <% end %>
+      </div>
