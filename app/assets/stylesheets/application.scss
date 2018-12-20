@@ -16,13 +16,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-*{
+/**{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-}
+}*/
 
-header{
+/*header{
 	position: relative;
 	width: 100%;
 	background-color: black;
@@ -41,6 +41,10 @@ header{
 .header-nav-item{
 	display: inline-block;
 	margin-left: 20px;
+}*/
+
+li{
+	list-style: none;
 }
 
 footer{
@@ -56,6 +60,11 @@ footer{
 /*user_info部分テンプレート*/
 .user-img{
 	margin: 10px;
+}
+
+/*エラーメッセージ*/
+.error-m{
+	color: red;
 }
 
 /*book new*/
@@ -95,4 +104,8 @@ table{
 /*user index*/
 .user-none{
 	width: 40%;
+}
+
+.welocome-m{
+	margin: none;
 }

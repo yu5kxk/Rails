@@ -9,10 +9,19 @@ class ApplicationController < ActionController::Base
 		@current_user = User.find_by(id: session[:user_id])
 	end
 
+	before_action :configure_permitted_parameters, if: :devise_controller?
+	# ログイン情報の変更　ストロングパロメータ
+
 	protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  end
+
+  def configure_permitted_parameters # ログイン情報の変更　ストロングパロメータ
+   devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+   devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
+   devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 
 end
