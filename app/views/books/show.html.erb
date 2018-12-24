@@ -4,25 +4,35 @@
       	<h2>Book detail</h2>
         	<table>
             <tr>
-              <td class="user-img"></td>
-              <td class="user-name"></td>
-              <td class="book-title"></td>
-              <td class="book-body"></td>
+              <td class="user-img">   </td>
+              <td class="user-name">   </td>
+              <td class="book-title">   </td>
+              <td class="book-body">   </td>
+              <td class="botton">   </td>
+              <td class="botton">   </td>
             </tr>
         		  <tr>
           			<td class="user-img">
-          				<%= attachment_image_tag @user, :user_image, size: '60x60', format: 'jpeg', fallback: "no_image.jpg",class: "user-img" %>
+          				<%= attachment_image_tag @book.user, :user_image, size: '60x60', format: 'jpeg', fallback: "no_image.jpg",class: "user-img" %>
+                  <%= link_to @book.user.name, user_path(@book.user_id) %>
           			</td>
+                <td class="user-name">
+                  <!--  空欄の行 -->
+                </td>
           			<td class="book-title">
-          				<%= @book.title %>
+          				<%= link_to @book.title, book_path(@book), class: "book_title" %>
           			</td>
           			<td class="book-body">
           				<%= @book.body %>
           			</td>
+                <% if @book.user == current_user %>
                 <td class="botton">
                   <%= link_to 'Edit', edit_book_path(@book), class: "btn btn-success edit_book_#{@book.id}" %>
+                </td>
+                <td class="botton">
                   <%= link_to 'Destroy', book_path(@book), class: "btn btn-danger destroy_book_#{@book.id}", method: :delete, "data-confirm" => "本当に削除しますか？" %>
                 </td>
+                <% end %>
           		  </tr>
         	</table>
       </div>

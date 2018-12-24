@@ -7,7 +7,7 @@
     <%= form_for(@user) do |f| %>
       <div class="row">
       	<div class="col-md-6">
-      		<label class="user-name">Name</label><%= f.text_field :name %>
+      		<label class="user-name">Name</label><%= f.text_field :name, class: "name" %>
       	</div>
       </div>
       <div class="row">
@@ -18,7 +18,7 @@
       </div>
       <div class="row">
       	<div class="col-md-12">
-      		<label>Introduction</label><%= f.text_area :introduction, class: "introduction" %><br>
+      		<label>Introduction</label><%= f.text_field :introduction, class: "introduction" %><br>
       		<%= f.submit 'Update User' %>
             </div>
       </div>

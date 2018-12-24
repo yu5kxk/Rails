@@ -18,7 +18,7 @@
                   <!-- 名前の表示なし -->
           			</td>
           			<td class="book-title">
-          				<%= link_to book.title, book_path(book), class: "book_title" %>
+          				<%= link_to book.title, book_path(book), class: "book_#{book.id}" %>
           			</td>
           			<td class="book-body">
           				<%= book.body %>
