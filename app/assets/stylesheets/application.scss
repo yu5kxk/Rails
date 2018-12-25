@@ -57,6 +57,20 @@ footer{
 	margin: 0 50px;
 }
 
+/*ログイン時のサクセスメッセージ*/
+.notice {
+  background-color: green;
+  color: #white;
+  text-align: center;
+}
+
+.alert {
+  background-color: red;
+  color: #white;
+  text-align: center;
+}
+
+
 /*user_info部分テンプレート*/
 .user-img{
 	margin: 10px;

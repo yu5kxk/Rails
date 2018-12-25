@@ -14,12 +14,8 @@ class ApplicationController < ActionController::Base
 
 	protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-  end
-
   def configure_permitted_parameters # ログイン情報の変更　ストロングパロメータ
-   devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+   devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:email]) #emailも入れておかないとはじかれる
    devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
    devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
