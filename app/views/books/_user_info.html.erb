@@ -28,7 +28,7 @@
         <!-- form_for部分 -->
         <%= form_for(book) do |f| %>
         　　<!-- エラーメッセージ -->
-          <% if @book.errors.any? %>
+          <% if book.errors.any? %>
             <p class="error-m">There is a deficiency in the input.</p>
           <% end %>
 
