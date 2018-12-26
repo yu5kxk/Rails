@@ -19,7 +19,6 @@ class BooksController < ApplicationController
 		  else
 			@books = Book.all #newの内容
 			@user = current_user #newの内容
-			flash[:notice] = "Error"
 		  	render :new #エラーが出た場合newに戻る。newの内容を必ず前に記述してあげる
 		end
 	end
@@ -27,6 +26,7 @@ class BooksController < ApplicationController
 	def show
 		@book = Book.find(params[:id])
 		@user = current_user
+		@books = Book.new
 	end
 
 	def edit
